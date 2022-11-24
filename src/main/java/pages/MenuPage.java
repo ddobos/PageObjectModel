@@ -19,4 +19,8 @@ public class MenuPage {
 		driver.findElement(locator).click();
 	}
 
+	public ContactsPage navigateToContactPage() {
+		driver.findElement(contactsLink).click();
+		return new ContactsPage(driver);
+	}
 }

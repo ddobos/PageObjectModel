@@ -7,11 +7,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.MenuPage;
 
 public class BaseTest {
 	
 	public WebDriver driver;
 	String startUrl = "https://keybooks.ro";
+	public MenuPage menu;
 	
 	@BeforeClass
 	public void setup() {
@@ -21,8 +23,8 @@ public class BaseTest {
 		// setarea globala la nivel de @testClass
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(startUrl);
-//		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-//		driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+		
+		menu = new MenuPage(driver);
 		
 	}
 	
