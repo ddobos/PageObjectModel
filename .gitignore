@@ -6,6 +6,7 @@
 bin/
 tmp/
 test-output/
+screenshots/
 *.tmp
 *.bak
 *.swp
