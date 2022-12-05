@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginInApp("TestUser", "12345@67890");
 		
-		assertTrue(loginPage.checkMsgIsDisplayed(loginPage.loginSuccessMsg));
+		assertTrue(loginPage.checkElementIsDisplayed(loginPage.loginSuccessMsg));
 		loginPage.logoutFromApp();
 	}
 	
@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginInApp("TestUser", "12345");
 		
-		assertTrue(loginPage.checkMsgIsDisplayed(loginPage.loginErrorMsg));
+		assertTrue(LoginPage.checkElementIsDisplayed(loginPage.loginErrorMsg));
 		
 	}
 }
