@@ -35,7 +35,7 @@ public class SeleniuWrappers extends BaseTest {
 	public void waitForELementToBeVisible(By locator) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		}catch(NoSuchElementException e){
 			throw new TestException(e.getMessage());
 		}
@@ -56,4 +56,5 @@ public class SeleniuWrappers extends BaseTest {
 			throw new TestException(e.getMessage());
 		}
 	}
+
 }
