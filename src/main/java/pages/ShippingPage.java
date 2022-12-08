@@ -1,10 +1,7 @@
 package pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import utils.SeleniuWrappers;
@@ -40,20 +37,20 @@ public class ShippingPage extends SeleniuWrappers{
 //		}
 //	}
 	
-	public void filterByIndex(By locator, int index) { //42
-		dropdown = new Select(driver.findElement(locator));
-		dropdown.selectByIndex(index);
-		
-	}
-	
-	public void filterByValue(By locator, String value) {
-		dropdown = new Select(driver.findElement(locator));
-		dropdown.selectByValue(value);
-	}
-	
-	public String getFilterValue(By locator) {
-		dropdown = new Select(driver.findElement(locator));
-		return dropdown.getFirstSelectedOption().getText();
-	}
+//	public void filterByIndex(By locator, int index) { //42
+//		dropdown = new Select(driver.findElement(locator));
+//		dropdown.selectByIndex(index);
+//		
+//	}
+//	
+//	public void filterByValue(By locator, String value) {
+//		dropdown = new Select(driver.findElement(locator));
+//		dropdown.selectByValue(value);
+//	}
+//	
+//	public String getFilterValue(By locator) {
+//		dropdown = new Select(driver.findElement(locator));
+//		return dropdown.getFirstSelectedOption().getText();
+//	}
 	
 }

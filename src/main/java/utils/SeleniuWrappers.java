@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.TestException;
 
@@ -80,6 +81,22 @@ public class SeleniuWrappers extends BaseTest {
 		}catch(NoSuchElementException e) {
 			throw new TestException(e.getMessage());
 		}
+	}
+	
+	public void filterByIndex(By locator, int index) { //42
+		Select dropdown = new Select(driver.findElement(locator));
+		dropdown.selectByIndex(index);
+		
+	}
+	
+	public void filterByValue(By locator, String value) {
+		Select dropdown = new Select(driver.findElement(locator));
+		dropdown.selectByValue(value);
+	}
+	
+	public String getFilterValue(By locator) {
+		Select dropdown = new Select(driver.findElement(locator));
+		return dropdown.getFirstSelectedOption().getText();
 	}
 
 }
