@@ -5,11 +5,17 @@ import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.TestException;
 
 public class SeleniuWrappers extends BaseTest {
+	
+	public WebElement getWebElement(By locator) {
+		waitForELementToBeVisible(locator);
+		return driver.findElement(locator);
+	}
 
 	public void click(By locator) {
 		try {
@@ -52,6 +58,25 @@ public class SeleniuWrappers extends BaseTest {
 			element.clear();
 			element.sendKeys(textToBeSend);
 			
+		}catch(NoSuchElementException e) {
+			throw new TestException(e.getMessage());
+		}
+	}
+	
+	public void hoverElement(By locator) {
+		try{
+			Actions action = new Actions(driver);
+			action.moveToElement(driver.findElement(locator)).perform();
+		}
+		catch(NoSuchElementException e) {
+			throw new TestException(e.getMessage());
+		}
+	}
+	
+	public void dragAndDrop(By locator, int x, int y) {
+		try {
+			Actions action = new Actions(driver);
+			action.dragAndDropBy(driver.findElement(locator), x, y).perform();
 		}catch(NoSuchElementException e) {
 			throw new TestException(e.getMessage());
 		}

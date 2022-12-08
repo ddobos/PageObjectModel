@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class BooksPage {
+import utils.SeleniuWrappers;
+
+public class BooksPage extends SeleniuWrappers {
 	
 	WebDriver driver;
 	public Select selectDropDown; 
@@ -20,6 +22,8 @@ public class BooksPage {
 	public By countBooks = By.cssSelector("ul[class*='products']>li");
 	public By saleLabel = By.cssSelector("span[class='onsale']");
 	public By orderDropDown = By.name("orderby");
+	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
+	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
 
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();

@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import utils.SeleniuWrappers;
 
@@ -22,6 +23,10 @@ public class MenuPage extends SeleniuWrappers{
 	public By homeLink = By.linkText("HOME");
 	public By searchIcon = By.cssSelector("button[class*='search_submit']");
 	public By searchInput = By.cssSelector("input[class*='search_field']");
+	public By aboutLink = By.linkText("ABOUT");
+	public By blogSubMenuMansory = By.xpath("//a[contains(text(),'Masonry')]");
+	public By blogSubMenuMansorySubMenu2 = By.xpath("//a[contains(text(),'Masonry 2')]");
+	public By blogSubMenuPostFormats = By.linkText("Post Formats");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
@@ -48,4 +53,5 @@ public class MenuPage extends SeleniuWrappers{
 		driver.findElement(books).click();
 		return new BooksPage(driver);
 	}
+	
 }
