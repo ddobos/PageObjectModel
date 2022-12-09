@@ -18,12 +18,13 @@ public class BooksPage extends SeleniuWrappers {
 		this.driver = driver;
 	}
 	
-	public By cookBooks = By.cssSelector("ul[class*='categories'] a[href*=cook]");
+	public By cookBooksLink = By.cssSelector("ul[class*='categories'] a[href*=cook]");
 	public By countBooks = By.cssSelector("ul[class*='products']>li");
 	public By saleLabel = By.cssSelector("span[class='onsale']");
 	public By orderDropDown = By.name("orderby");
 	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
 	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
+	public By productTitle = By.cssSelector("h1[class*='product_title']");
 
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();

@@ -14,7 +14,7 @@ public class DropDownTest extends BaseTest {
 	
 	@Test(priority = 1)
 	public void selectByValueTest() {
-		app.menu.navigateTo(app.menu.books);
+		app.menu.navigateTo(app.menu.booksLink);
 		app.shop.filterByValue("price-desc");
 		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/shop/?orderby=price-desc");
 		assertEquals(app.shop.getCurrentSelectedOption(),"Sort by price: high to low2");

@@ -20,7 +20,7 @@ public class ActionClassExample extends BaseTest {
 	
 //	@Test(priority = 2)
 	public void dragAndDropTest() {
-		app.menu.navigateTo(app.menu.books);
+		app.menu.navigateTo(app.menu.booksLink);
 		app.shop.dragAndDrop(app.shop.sliderInitialPosition, 100, 0); //x + 100 px - deplasarea la dreapta
 		app.shop.dragAndDrop(app.shop.sliderFinalPosition, -100, 0); //x - 100 px - deplasarea la stanga
 	}

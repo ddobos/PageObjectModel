@@ -26,7 +26,7 @@ public class Homework23 extends BaseTest{
 	@Test(priority = 2)
 	public void cookBooksSale() {
 		BooksPage book = menu.navigateToBooksPage();
-		book.navigateTo(book.cookBooks);
+		book.navigateTo(book.cookBooksLink);
 		assertTrue(book.allBooksIsOnSale());
 		
 	}
