@@ -17,7 +17,7 @@ public class DropDownTest extends BaseTest {
 		app.menu.navigateTo(app.menu.booksLink);
 		app.shop.filterByValue("price-desc");
 		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/shop/?orderby=price-desc");
-		assertEquals(app.shop.getCurrentSelectedOption(),"Sort by price: high to low2");
+		assertEquals(app.shop.getCurrentSelectedOption(),"Sort by price: high to low");
 	}
 	
 	@Test(priority = 2)
@@ -39,6 +39,8 @@ public class DropDownTest extends BaseTest {
 		Select selecta = new Select(element);
 		selecta.selectByIndex(2);
 		//la fiecare refresh de pagina trebuie de identificat elementul din nou.
+		element = driver.findElement(By.name("orderby"));
+		selecta = new Select(element);
 		selecta.selectByVisibleText("Sort By popularity");
 	}
 		

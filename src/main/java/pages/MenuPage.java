@@ -16,7 +16,7 @@ public class MenuPage extends SeleniuWrappers{
 	
 	public By loginLink = By.linkText("Login");
 	public By contactsLink = By.linkText("CONTACTS");
-	public By blog = By.linkText("BLOG");
+	public By blogLink = By.linkText("BLOG");
 	public By classicBlog = By.linkText("Classic");
 	public By booksLink = By.linkText("BOOKS");
 	public By eventsLink = By.linkText("EVENTS");
@@ -44,7 +44,7 @@ public class MenuPage extends SeleniuWrappers{
 	}
 	
 	public BlogPage navigateToBlogClassicPage() {
-		driver.findElement(blog).click();
+		driver.findElement(blogLink).click();
 		driver.findElement(classicBlog).click();
 		return new BlogPage(driver);
 	}

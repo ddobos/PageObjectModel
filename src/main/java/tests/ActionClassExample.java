@@ -11,9 +11,9 @@ public class ActionClassExample extends BaseTest {
 	
 //	@Test(priority = 1)
 	public void hoverTest() {
-		app.menu.hoverElement(app.menu.blog);
+		app.menu.hoverElement(app.menu.blogLink);
 		app.menu.hoverElement(app.menu.aboutLink);
-		app.menu.hoverElement(app.menu.blog);
+		app.menu.hoverElement(app.menu.blogLink);
 		app.menu.hoverElement(app.menu.blogSubMenuMansory);
 		app.menu.click(app.menu.blogSubMenuMansorySubMenu2);
 	}
@@ -27,7 +27,7 @@ public class ActionClassExample extends BaseTest {
 	
 //	@Test(priority = 3)
 	public void sendKeysExample() {
-		app.menu.hoverElement(app.menu.blog);
+		app.menu.hoverElement(app.menu.blogLink);
 		app.menu.click(app.menu.blogSubMenuPostFormats);
 		
 		Actions action = new Actions(driver);
