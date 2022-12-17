@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeClass;
 import com.google.common.io.Files;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.BlogPage;
 import pages.MenuPage;
 
 public class BaseTest {
@@ -25,6 +26,7 @@ public class BaseTest {
 	String startUrl = "https://keybooks.ro";
 	public MenuPage menu;
 	public BasePage app;
+	public BlogPage blog;
 	
 	@BeforeClass
 	public void setup() {
@@ -37,6 +39,7 @@ public class BaseTest {
 		
 		menu = new MenuPage(driver);
 		app =new BasePage();
+		blog = new BlogPage(driver);
 	}
 	
 	@AfterClass 

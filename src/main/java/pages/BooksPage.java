@@ -25,6 +25,7 @@ public class BooksPage extends SeleniuWrappers {
 	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
 	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
 	public By productTitle = By.cssSelector("h1[class*='product_title']");
+	public By price = By.xpath("//span[@class='price']/ins/span/bdi|//span[@class='price']/span/bdi");
 
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();

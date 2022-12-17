@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class BlogPage {
+import utils.SeleniuWrappers;
+
+public class BlogPage extends SeleniuWrappers {
 	
 	WebDriver driver;
 	public final String seachText = "Why I won't stop buying books";

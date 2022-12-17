@@ -1,6 +1,7 @@
 package utils;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,11 @@ public class SeleniuWrappers extends BaseTest {
 	public WebElement getWebElement(By locator) {
 		waitForELementToBeVisible(locator);
 		return driver.findElement(locator);
+	}
+	
+	public List<WebElement> getWebElements(By locator) {
+		waitForELementToBeVisible(locator);
+		return driver.findElements(locator);
 	}
 
 	public void click(By locator) {
