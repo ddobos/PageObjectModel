@@ -27,6 +27,9 @@ public class MenuPage extends SeleniuWrappers{
 	public By blogSubMenuMansory = By.xpath("//a[contains(text(),'Masonry')]");
 	public By blogSubMenuMansorySubMenu2 = By.xpath("//a[contains(text(),'Masonry 2')]");
 	public By blogSubMenuPostFormats = By.linkText("Post Formats");
+	public By fbLink = By.cssSelector("div[class*='top_panel_top'] a[class*='facebook']");
+	public By twitterLink = By.cssSelector("div[class*='top_panel_top'] a[class*='twitter']");
+	public By instagrammLink = By.cssSelector("div[class*='top_panel_top'] a[class*='instagramm']");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();

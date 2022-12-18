@@ -21,6 +21,7 @@ public class BlogPage extends SeleniuWrappers {
 	public By submitSearch = By.xpath("//aside[@id='search-2']/descendant::button");
 	public By foundMsg = By.xpath("//a[contains(text(), \"Why I won\")]");
 	public By category = By.cssSelector("a[class='category_link']");
+	public By galleryLink = By.xpath("//a[contains(text(), 'Gallery')]");
 	
 	public void submitSearchMessage(String msg) {
 		driver.findElement(searchBlog).sendKeys(msg);

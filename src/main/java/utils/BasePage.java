@@ -1,5 +1,6 @@
 package utils;
 
+import pages.BlogPage;
 import pages.BooksPage;
 import pages.ContactsPage;
 import pages.EventsPage;
@@ -11,6 +12,7 @@ public class BasePage extends BaseTest {
 	
 	public MenuPage menu= new MenuPage(driver);
 	public BooksPage shop = new BooksPage(driver);
+	public BlogPage blog = new BlogPage(driver);
 	public PostFormatPage postFormat = new PostFormatPage(driver);
 	public ContactsPage contact = new ContactsPage(driver);
 	public EventsPage events = new EventsPage(driver);
