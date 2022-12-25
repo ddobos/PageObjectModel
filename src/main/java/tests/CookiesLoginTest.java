@@ -2,41 +2,39 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
-import org.testng.annotations.Listeners;
+import java.util.Set;
+
+import org.openqa.selenium.Cookie;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.MenuPage;
 import utils.BaseTest;
-import utils.TestNgListener;
 
-@Listeners(TestNgListener.class)
-public class LoginTest extends BaseTest {
+public class CookiesLoginTest extends BaseTest {
+	Set<Cookie> setCookies;
 
 	@Test(priority = 1)
 	public void validLoginTest() {
 		MenuPage menuPage = new MenuPage(driver);
-		
-		menuPage.click(menuPage.loginLink);
-//		menuPage.navigateTo(menuPage.loginLink);
-		
+
+		menuPage.navigateTo(menuPage.loginLink);
+
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginInApp("TestUser", "12345@67890");
-		
+
 		assertTrue(loginPage.checkElementIsDisplayed(loginPage.loginSuccessMsg));
-		loginPage.logoutFromApp();
+		setCookies = driver.manage().getCookies();
 	}
-	
+
 	@Test(priority = 2)
-	public void invalidLoginTest() {
+	public void cookiesLogin() {
 		MenuPage menuPage = new MenuPage(driver);
-		
 		menuPage.navigateTo(menuPage.loginLink);
-		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginInApp("TestUser", "12345");
-		
-		assertTrue(LoginPage.checkElementIsDisplayed(loginPage.loginSuccessMsg));
-		
+		for (Cookie cookie : setCookies) {
+			driver.manage().addCookie(cookie);
+		}
+
+		menu.navigateTo(menu.blogLink);
 	}
 }

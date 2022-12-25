@@ -12,7 +12,7 @@ import utils.BaseTest;
 
 public class Homework28 extends BaseTest {
 
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void homeWorkTest() {
 
 		SoftAssert sa = new SoftAssert();

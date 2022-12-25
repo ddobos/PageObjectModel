@@ -30,7 +30,7 @@ public class BaseTest {
 
 	@BeforeClass
 	public void setup() {
-
+		Log.info("Start Chrome Browser");
 		driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		// setarea globala la nivel de @testClass

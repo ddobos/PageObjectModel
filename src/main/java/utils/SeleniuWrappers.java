@@ -26,30 +26,40 @@ public class SeleniuWrappers extends BaseTest {
 
 	public void click(By locator) {
 		try {
+			
 //			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //			wait.until(ExpectedConditions.elementToBeClickable(locator));
 			waitForElementToBeClicable(locator);
 			WebElement element = driver.findElement(locator);
+			Log.info("caled method <Click()> on element : " + element.getAttribute("outherHTML"));
 			element.click();
 		} catch (NoSuchElementException e) {
+			Log.error("Element not found on methode <Click()> after wait specified sec");
+			Log.error(e.getMessage());
 			throw new TestException(e.getMessage());
 		}
 	}
 
 	public void waitForElementToBeClicable(By locator) {
 		try {
+			Log.info("Called methos <WaitForElementToBeClicable()> on element with locator : " + locator);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			wait.until(ExpectedConditions.elementToBeClickable(locator));
 		}catch(NoSuchElementException e) {
+			Log.error("Element not found on methode <WaitForElementToBeClicable()()> after wait specified sec");
+			Log.error(e.getMessage());
 			throw new TestException(e.getMessage());
 		}
 	}
 	
 	public void waitForELementToBeVisible(By locator) {
 		try {
+			Log.info("Called methos <WaitForElementToVisible()> on element with locator : " + locator);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		}catch(NoSuchElementException e){
+			Log.error("Element not found on methode <WaitForElementToBeVisible()()> after wait specified sec");
+			Log.error(e.getMessage());
 			throw new TestException(e.getMessage());
 		}
 	}
@@ -60,12 +70,15 @@ public class SeleniuWrappers extends BaseTest {
 	
 	public void sendKeys(By locator, String textToBeSend) {
 		try {
+			
 			waitForELementToBeVisible(locator);
 			WebElement element = driver.findElement(locator);
+			Log.info("Called clear on methode <sendKeys()> on element " + element.getAttribute("outherHTML"));
 			element.clear();
+			Log.info("Called sendKeys on methode <sendKeys()> on element " + element.getAttribute("outherHTML"));
 			element.sendKeys(textToBeSend);
-			
 		}catch(NoSuchElementException e) {
+			Log.error("Failed method <sendKeys()> with error " + e.getMessage());
 			throw new TestException(e.getMessage());
 		}
 	}
